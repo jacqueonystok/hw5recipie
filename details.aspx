@@ -36,7 +36,12 @@
         SelectCommand="SELECT * FROM [Recipes] WHERE ([IdNew] = @IdNew)"
          DeleteCommand="DELETE FROM [Recipes] WHERE [IdNew] = @IdNew" 
         InsertCommand="INSERT INTO [Recipes] ([RecipeName], [SubmittedBy], [Ingredient1], [Ingredient2], [Ingredient3], [Ingredient4], [Ingredient5], [Prep], [Notes]) VALUES (@RecipeName, @SubmittedBy, @Ingredient1, @Ingredient2, @Ingredient3, @Ingredient4, @Ingredient5, @Prep, @Notes)"
-         UpdateCommand="UPDATE [Recipes] SET [RecipeName] = @RecipeName, [SubmittedBy] = @SubmittedBy, [Ingredient1] = @Ingredient1, [Ingredient2] = @Ingredient2, [Ingredient3] = @Ingredient3, [Ingredient4] = @Ingredient4, [Ingredient5] = @Ingredient5, [Prep] = @Prep, [Notes] = @Notes WHERE [IdNew] = @IdNew">
+         UpdateCommand="UPDATE [Recipes] SET [RecipeName] = @RecipeName, [SubmittedBy] = @SubmittedBy, [Ingredient1] = @Ingredient1, [Ingredient2] = @Ingredient2, [Ingredient3] = @Ingredient3, [Ingredient4] = @Ingredient4, [Ingredient5] = @Ingredient5, [Prep] = @Prep, [Notes] = @Notes WHERE [IdNew] = @IdNew"
+        
+
+        >
+        
+        
         <DeleteParameters>
             <asp:Parameter Name="IdNew" Type="Int32" />
         </DeleteParameters>
@@ -67,11 +72,20 @@
             <asp:Parameter Name="IdNew" Type="Int32" />
         </UpdateParameters>
         </asp:sqldatasource>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="IdNew" DataSourceID="Sqldatasource1" Height="97px" Width="250px">
+        <asp:DetailsView
+             ID="DetailsView1"
+             runat="server" 
+            AutoGenerateRows="False"
+             DataKeyNames="IdNew"
+             DataSourceID="Sqldatasource1"
+             Height="97px" 
+            Width="341px"
+             CssClass="cssgridview"
+            headerStyle-CssClass="header"
+          >
             <Fields>
-                <asp:BoundField DataField="IdNew" HeaderText="IdNew" SortExpression="IdNew" InsertVisible="False" ReadOnly="True" />
-                <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" SortExpression="RecipeName" />
-                <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
+                <asp:BoundField DataField="RecipeName" HeaderText="Recipe Name" SortExpression="RecipeName" />
+                <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />
                 <asp:BoundField DataField="Ingredient1" HeaderText="Ingredient1" SortExpression="Ingredient1" />
                 <asp:BoundField DataField="Ingredient2" HeaderText="Ingredient2" SortExpression="Ingredient2" />
                 <asp:BoundField DataField="Ingredient3" HeaderText="Ingredient3" SortExpression="Ingredient3" />
@@ -81,6 +95,7 @@
                 <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
+            <HeaderStyle CssClass="header" />
         </asp:DetailsView>
         <br />
     </div>

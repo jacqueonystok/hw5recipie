@@ -28,7 +28,8 @@
 
 
         </div>
-
+        <br />
+        <br />
     <div>
     
         <asp:SqlDataSource
@@ -41,8 +42,13 @@
              AutoGenerateColumns="False"
              DataKeyNames="IdNew"
              DataSourceID="SqlDataSource1" 
-            AllowPaging="True" AllowSorting="True" Width="429px"
+            AllowPaging="True" 
+           
+            AllowSorting="True" 
             CssClass="cssgridview"
+            headerStyle-CssClass="header"
+           
+
             >
             <Columns>
                 <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" SortExpression="RecipeName" />

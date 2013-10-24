@@ -4,11 +4,21 @@
 #about { text-align:left;
 }
 
-#contact { text-align:left; font-size:14pt;
+#contact { text-align:left; font-size:14pt; 
 }
 
-#contain {
-}
 
-.cssgridview {width:100%; background-color:#F08080;
+/*made both details and defualt views*/
+.cssgridview {width:100%; background-color:#F08080; border:solid 6px white;
 }
+    .cssgridview td {padding:10px; border:solid 1px; color:#FFFFFF;  
+    }
+    .cssgridview th{padding:4px 2px; border:solid 1px; color:#FFFFFF ;background-color:#FFFF99
+    }
+        .cssgridview th a {
+            color: silver;
+            text-decoration: none;
+        }
+  .cssgridview .header td{width:150px; text-align:center; color:#FFFF99
+        }
+
