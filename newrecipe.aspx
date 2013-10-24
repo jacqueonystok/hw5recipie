@@ -1,6 +1,6 @@
 ﻿
 
-<%@ Page Language="VB" AutoEventWireup="false" CodeFile="details.aspx.vb" Inherits="details" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="newrecipe.aspx.vb" Inherits="details" %>
 
 <!DOCTYPE html>
 
@@ -21,7 +21,7 @@
         <br />
            <div id="nav">
             <a href="./Default.aspx">Home</a> &#124;
-         <a href="./newrecipe.aspx">New Recipie</a> &#124;
+            <a href="./newrecipe.aspx">New Recipie</a> &#124;
             <a href="./AboutUs.aspx">About Us</a> &#124;
              <a href="./Contact.aspx">Contact</a> &#124;
 
@@ -29,14 +29,7 @@
         </div>
 
     <div>
-    <asp:sqldatasource 
-        ID="Sqldatasource1" 
-        runat="server"
-        ConnectionString="<%$ ConnectionStrings:HW5 %>" 
-        SelectCommand="SELECT * FROM [Recipes] WHERE ([IdNew] = @IdNew)"
-         DeleteCommand="DELETE FROM [Recipes] WHERE [IdNew] = @IdNew" 
-        InsertCommand="INSERT INTO [Recipes] ([RecipeName], [SubmittedBy], [Ingredient1], [Ingredient2], [Ingredient3], [Ingredient4], [Ingredient5], [Prep], [Notes]) VALUES (@RecipeName, @SubmittedBy, @Ingredient1, @Ingredient2, @Ingredient3, @Ingredient4, @Ingredient5, @Prep, @Notes)"
-         UpdateCommand="UPDATE [Recipes] SET [RecipeName] = @RecipeName, [SubmittedBy] = @SubmittedBy, [Ingredient1] = @Ingredient1, [Ingredient2] = @Ingredient2, [Ingredient3] = @Ingredient3, [Ingredient4] = @Ingredient4, [Ingredient5] = @Ingredient5, [Prep] = @Prep, [Notes] = @Notes WHERE [IdNew] = @IdNew">
+    <asp:sqldatasource ID="Sqldatasource1" runat="server" ConnectionString="<%$ ConnectionStrings:HW5 %>" SelectCommand="SELECT * FROM [Recipes] WHERE ([IdNew] = @IdNew)" DeleteCommand="DELETE FROM [Recipes] WHERE [IdNew] = @IdNew" InsertCommand="INSERT INTO [Recipes] ([RecipeName], [SubmittedBy], [Ingredient1], [Ingredient2], [Ingredient3], [Ingredient4], [Ingredient5], [Prep], [Notes]) VALUES (@RecipeName, @SubmittedBy, @Ingredient1, @Ingredient2, @Ingredient3, @Ingredient4, @Ingredient5, @Prep, @Notes)" UpdateCommand="UPDATE [Recipes] SET [RecipeName] = @RecipeName, [SubmittedBy] = @SubmittedBy, [Ingredient1] = @Ingredient1, [Ingredient2] = @Ingredient2, [Ingredient3] = @Ingredient3, [Ingredient4] = @Ingredient4, [Ingredient5] = @Ingredient5, [Prep] = @Prep, [Notes] = @Notes WHERE [IdNew] = @IdNew">
         <DeleteParameters>
             <asp:Parameter Name="IdNew" Type="Int32" />
         </DeleteParameters>
@@ -67,7 +60,7 @@
             <asp:Parameter Name="IdNew" Type="Int32" />
         </UpdateParameters>
         </asp:sqldatasource>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="IdNew" DataSourceID="Sqldatasource1" Height="97px" Width="250px">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="IdNew" DataSourceID="Sqldatasource1" Height="97px" Width="250px" DefaultMode="Insert">
             <Fields>
                 <asp:BoundField DataField="IdNew" HeaderText="IdNew" SortExpression="IdNew" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" SortExpression="RecipeName" />
@@ -79,7 +72,7 @@
                 <asp:BoundField DataField="Ingredient5" HeaderText="Ingredient5" SortExpression="Ingredient5" />
                 <asp:BoundField DataField="Prep" HeaderText="Prep" SortExpression="Prep" />
                 <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:CommandField ShowInsertButton="True" />
             </Fields>
         </asp:DetailsView>
         <br />

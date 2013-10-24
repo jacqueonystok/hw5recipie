@@ -18,16 +18,29 @@
         <br />
    <div id="nav">
             <a href="./Default.aspx">Home</a> &#124;
-            <a href="./NewRecipie.aspx">New Recipie</a> &#124;
+            <a href="./newrecipe.aspx">New Recipie</a> &#124;
             <a href="./AboutUs.aspx">About Us</a> &#124;
              <a href="./Contact.aspx">Contact</a> &#124;
 
 
         </div>
+               
+               <br />
+               
+       <br />
+      
+       <div id="contact">
+           <asp:Label ID="Label1" runat="server" Text="Your E-Mail Address"></asp:Label>
+           <br />
+           <asp:TextBox ID="emailAddress" runat="server" BorderStyle="Inset" Height="32px" Width="229px"></asp:TextBox>
+           <br />
+           <br />
+           <asp:Label ID="Label2" runat="server" Text="Your Message:"></asp:Label>
+           <br />
 
-        <div>
-    
-    </div>
-    </form>
+           <asp:TextBox ID="message" runat="server" BorderStyle="Outset" Height="135px" Width="255px"></asp:TextBox>
+       </div>
+        </form>
+     
 </body>
 </html>

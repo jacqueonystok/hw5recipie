@@ -1,2 +1,14 @@
-﻿body {background-color: tan; text-align:center;
+﻿body {background-color: #D2B48C; text-align:center;
+}
+
+#about { text-align:left;
+}
+
+#contact { text-align:left; font-size:14pt;
+}
+
+#contain {
+}
+
+.cssgridview {width:100%; background-color:#F08080;
 }

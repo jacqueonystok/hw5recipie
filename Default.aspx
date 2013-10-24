@@ -22,7 +22,7 @@
 
         <div id="nav">
             <a href="./Default.aspx">Home</a> &#124;
-            <a href="./NewRecipie.aspx">New Recipie</a> &#124;
+     <a href="./newrecipe.aspx">New Recipie</a> &#124;
             <a href="./AboutUs.aspx">About Us</a> &#124;
              <a href="./Contact.aspx">Contact</a> &#124;
 
@@ -31,12 +31,23 @@
 
     <div>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HW5 %>" SelectCommand="SELECT * FROM [MainRTb]"></asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RecipieID" DataSourceID="SqlDataSource1">
+        <asp:SqlDataSource
+             ID="SqlDataSource1"
+             runat="server" ConnectionString="<%$ ConnectionStrings:HW5 %>" 
+            SelectCommand="SELECT [RecipeName], [IdNew], [SubmittedBy] FROM [Recipes]"></asp:SqlDataSource>
+        <asp:GridView 
+            ID="GridView1"
+             runat="server"
+             AutoGenerateColumns="False"
+             DataKeyNames="IdNew"
+             DataSourceID="SqlDataSource1" 
+            AllowPaging="True" AllowSorting="True" Width="429px"
+            CssClass="cssgridview"
+            >
             <Columns>
-                <asp:BoundField DataField="RecipieName" HeaderText="Recipie Name" SortExpression="RecipieName" />
-                <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />
-                <asp:HyperLinkField DataNavigateUrlFields="RecipieID" DataNavigateUrlFormatString="details.aspx?RecipieID={0}" HeaderText="Submitted By" Text="Select" />
+                <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" SortExpression="RecipeName" />
+                <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
+                <asp:HyperLinkField DataNavigateUrlFields="IdNew" DataNavigateUrlFormatString="details.aspx?IdNew={0}" Text="Select" />
             </Columns>
         </asp:GridView>
     
